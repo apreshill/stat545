@@ -117,6 +117,9 @@ The `cowplot` package ([CRAN][cowplot-cran]; [GitHub][cowplot-github]) does (at 
 
 Check out [the vignette][cowplot-vignette] to see it in action.
 
-
+[cookbook-for-r-multigraphs]: http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
+[cowplot-cran]: https://CRAN.R-project.org/package=cowplot
+[cowplot-github]: https://github.com/wilkelab/cowplot
+[cowplot-vignette]: https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html
 ```{r links, child="links.md"}
 ```

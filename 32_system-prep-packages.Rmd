@@ -140,6 +140,6 @@ devtools::install_github("r-lib/devtools")
 
 For Windows instructions, see the [`devtools` README][devtools-github].
 
-
+[rstudio-devtools]: https://www.rstudio.com/products/rpackages/devtools/
 ```{r links, child="links.md"}
 ```

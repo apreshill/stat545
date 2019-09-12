@@ -168,6 +168,10 @@ defaulting to NULL then checking is.null() and take it from there
   + [Testing chapter](https://r-pkgs.org/tests.html)
 * Wickham's [testthat: Get Started with Testing][testthat-article] article in The R Journal [-@wickham2011b]. Maybe this is completely superseded by the newer chapter above? Be aware that parts could be out of date, but I recall it was a helpful read.
 
-
+[twitter-wrathematics]: https://twitter.com/wrathematics
+[rdocs-list]: https://rdrr.io/r/base/list.html
+[rdocs-quantile]: https://rdrr.io/r/stats/quantile.html
+[testthat-cran]: https://CRAN.R-project.org/package=testthat
+[testthat-github]: https://github.com/r-lib/testthat
 ```{r links, child="links.md"}
 ```

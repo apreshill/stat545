@@ -271,6 +271,7 @@ bind_rows(df1, df2)
 rbind(df1, df2)
 ```
 
-
+[blog-strings-as-factors]: https://notstatschat.tumblr.com/post/124987394001/stringsasfactors-sigh
+[bio-strings-as-factors]: https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography
 ```{r links, child="links.md"}
 ```

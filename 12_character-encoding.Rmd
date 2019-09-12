@@ -237,6 +237,8 @@ as.integer(charToRaw(backwards_one))
 as.integer(charToRaw(string_curly))
 ```
 
-
+[utf8-debug]: http://www.i18nqa.com/debug/utf8-debug.html
+[theyre-to-theyre]: https://www.justinweiss.com/articles/how-to-get-from-theyre-to-theyre/
+[wiki-mojibake]: https://en.wikipedia.org/wiki/Mojibake
 ```{r links, child="links.md"}
 ```

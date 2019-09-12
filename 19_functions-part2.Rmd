@@ -184,6 +184,7 @@ Hadley Wickham's book [Advanced R][adv-r] [-@wickham2015a]:
 * Section on [return values][adv-r-return-values]
   
 
-
+[wiki-boxplot]: https://en.wikipedia.org/wiki/Box_plot
+[adv-r-return-values]: http://adv-r.had.co.nz/Functions.html#return-values
 ```{r links, child="links.md"}
 ```

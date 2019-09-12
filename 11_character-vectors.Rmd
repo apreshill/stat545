@@ -393,5 +393,19 @@ For now, this lesson will refer you to other place to read up on this:
 * STAT 545 [2014 Intro to regular expressions](#oldies) by TA Gloria Li (Appendix \@ref(oldies)).
 * The [Strings chapter][r4ds-strings] of [R for Data Science][r4ds] [@wickham2016].
 
+
+[rstudio-regex-cheatsheet]: https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf
+[stackexchange-outage]: https://stackstatus.net/post/147710624694/outage-postmortem-july-20-2016
+[email-regex]: https://emailregex.com
+[fix-atom-bug]: https://davidvgalbraith.com/how-i-fixed-atom/
+[icu-regex]: https://userguide.icu-project.org/strings/regexp
+[regex101]: https://regex101.com
+[regexr]: https://regexr.com
+[r4ds-strings]: https://r4ds.had.co.nz/strings.html
+[rex-github]: https://github.com/kevinushey/rex
+[stringi-cran]: https://CRAN.R-project.org/package=stringi
+[glue-web]: https://glue.tidyverse.org
+[stringr-cran]: https://CRAN.R-project.org/package=stringr
+[stringr-web]: https://stringr.tidyverse.org
 ```{r links, child="links.md"}
 ```

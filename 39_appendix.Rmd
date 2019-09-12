@@ -56,7 +56,7 @@ Figure \@ref(fig:draw-an-owl) is an image that is often used to illustrate how h
 
 I recently needed to draw a f\*cking owl in R, so I decided to record the process as an experiment.
 
-When I teach [STAT545][stat-545] or [Software Carpentry][software-carpentry], I try to convey as much about *process* as anything else. You can always look up technical details, e.g., syntax, but you don't usually get to see how other people work. This is also how I approach teaching about [writing R functions](#functions-part1). Newcomers often look at finished code and assume it flowed perfectly formed out of someone's fingertips. It probably did not.
+When I teach [STAT 545][stat-545] or [Software Carpentry][software-carpentry], I try to convey as much about *process* as anything else. You can always look up technical details, e.g., syntax, but you don't usually get to see how other people work. This is also how I approach teaching about [writing R functions](#functions-part1). Newcomers often look at finished code and assume it flowed perfectly formed out of someone's fingertips. It probably did not.
 
 My *modus operandi*: start with something that works and add features in small increments, maniacally checking that everything still works. Other people undoubtedly move faster (and, therefore, travel faster but crash harder), but I'm OK with that.
 
@@ -403,7 +403,7 @@ No one wants to look at that. ~~You can provide this URL to [rawgit.com](http://
 *2018-10-09 update: RawGit [announced](https://rawgit.com/) that it is in a sunset phase and will soon shut down. They recommended: [jsDelivr](https://www.jsdelivr.com/rawgit), [GitHub Pages](https://pages.github.com/), [CodeSandbox](https://codesandbox.io/), and [unpkg](https://unpkg.com/#/) as alternatives.*
 
 
-You may also want to check out this [Chrome extension](https://chrome.google.com/webstore/detail/github-html-preview/cphnnfjainnhgejcpgboeeakfkgbkfek?hl=en) or [GitHub & BitBucket HTML Preview](https://htmlpreview.github.io).
+You may also want to check out this [Chrome extension](https://chrome.google.com/webstore/detail/github-html-preview/cphnnfjainnhgejcpgboeeakfkgbkfek?hl=en) or [GitHub & BitBucket HTML Preview][html-preview].
 
 This sort of enhanced link might be one of the useful things to put in a `README.md` or other Markdown file in the repo.
 
@@ -511,6 +511,10 @@ Instructor dependencies:
 * `rmarkdown`, `knitr`, and `xtable` if you want to compile the `Rmd` to `md` and `html`.
 
 
-
+[wiki-dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[adv-r-closures]: http://adv-r.had.co.nz/Functional-programming.html#closures
+[gh-github]: https://github.com/r-lib/gh
+[googlesheets-github]: https://github.com/jennybc/googlesheets
+[software-carpentry]: https://software-carpentry.org
 ```{r links, child="links.md"}
 ```

@@ -196,6 +196,13 @@ scatterplot + regression line / smooth
 high volume scatterplots
 -->
 
-
+[robbins-effective-graphs]: https://www.amazon.com/Creating-Effective-Graphs-Naomi-Robbins/dp/0985911123
+[google-pie-charts]: https://www.google.com/search?q=pie+charts+suck
+[why-pie-charts-suck]: https://www.richardhollins.com/blog/why-pie-charts-suck/
+[worst-figure]: https://robjhyndman.com/hyndsight/worst-figure/
+[hadley-github-index]: https://hadley.github.io
+[winston-chang-github]: https://github.com/wch
+[cookbook-for-r-graphs]: http://www.cookbook-r.com/Graphs/
+[r-graphics-cookbook]: http://shop.oreilly.com/product/0636920023135.do
 ```{r links, child="links.md"}
 ```

@@ -202,6 +202,13 @@ Blog post [Hands-on `dplyr` tutorial for faster data manipulation in R][datascho
 
 Chapter \@ref(join-cheatsheet): cheatsheet I made for `dplyr` join functions (not relevant yet but soon).
 
-
+[split-apply-combine]: https://www.jstatsoft.org/article/view/v040i01
+[wiki-pure-fxns]: https://en.wikipedia.org/wiki/Pure_function
+[wiki-nesting-dolls]: https://en.wikipedia.org/wiki/Matryoshka_doll
+[adv-r-fxns]: http://adv-r.had.co.nz/Functions.html
+[adv-r-dsl]: http://adv-r.had.co.nz/dsl.html
+[plyr-web]: http://plyr.had.co.nz
+[magrittr-web]: https://magrittr.tidyverse.org
+[dplyr-web]: https://dplyr.tidyverse.org
 ```{r links, child="links.md"}
 ```

@@ -57,7 +57,7 @@ knitr::include_graphics("img/spotify-howtobuildmvp.jpg")
 
 Build that skateboard before you build the car or some fancy car part. A limited-but-functioning thing is very useful. It also keeps the spirits high.
 
-This is related to the valuable [Telescope Rule][telescope-rule]:
+This is related to the valuable [Telescope Rule]:
 
 > It is faster to make a four-inch mirror then a six-inch mirror than to make a six-inch mirror.
 
@@ -201,5 +201,19 @@ Hadley Wickham's book [Advanced R][adv-r] [-@wickham2015a]:
 * Section on [defensive programming][adv-r-defensive-programming]
 
 
+[Telescope Rule]: http://c2.com/cgi/wiki?TelescopeRule
+[min-viable-product]: https://blog.fastmonkeys.com/?utm_content=bufferc2d6e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+[unix-philosophy]: http://www.faqs.org/docs/artu/ch01s06.html
+[rdocs-range]: https://rdrr.io/r/base/range.html
+[rdocs-extremes]: https://rdrr.io/r/base/Extremes.html
+[adv-r-defensive-programming]: http://adv-r.had.co.nz/Exceptions-Debugging.html#defensive-programming
+[assertive-cran]: https://CRAN.R-project.org/package=assertive
+[assertive-bitbucket]: https://bitbucket.org/richierocks/assertive/src/master/
+[assertr-cran]: https://CRAN.R-project.org/package=assertr
+[assertr-github]: https://github.com/ropensci/assertr
+[assertthat-cran]: https://CRAN.R-project.org/package=assertthat
+[assertthat-github]: https://github.com/hadley/assertthat
+[ensurer-cran]: https://CRAN.R-project.org/package=ensurer
+[ensurer-github]: https://github.com/smbache/ensurer
 ```{r links, child="links.md"}
 ```

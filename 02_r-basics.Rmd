@@ -274,5 +274,9 @@ For the record, when loading data into R and/or writing outputs to file, you can
 file.remove(c("avg_x.txt", "toy_line_plot.pdf"))
 ```
 
+[rstudio-customizing]: https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-RStudio
+[rstudio-key-shortcuts]: https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts
+[rstudio-command-history]: https://support.rstudio.com/hc/en-us/articles/200526217-Command-History
+[rstudio-using-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
 ```{r links, child="links.md"}
 ```

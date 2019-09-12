@@ -124,6 +124,7 @@ Yes.
 
 Given how I plan to use this function, I don't feel the need to put it under formal unit tests or put in argument validity checks. 
 
-
+[rdocs-coef]: https://rdrr.io/r/stats/coef.html
+[rdocs-lm]: https://rdrr.io/r/stats/lm.html
 ```{r links, child="links.md"}
 ```

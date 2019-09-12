@@ -553,7 +553,11 @@ Do you need just the US airports? [This API does that](https://github.com/Federa
 Sys.unsetenv("OMDB_API_KEY")
 ```
 
-
-
+[curl-cran]: https://CRAN.R-project.org/package=curl
+[xml2-web]: https://xml2.r-lib.org
+[rvest-github]: https://github.com/tidyverse/rvest
+[rvest-web]: https://rvest.tidyverse.org
+[rvest-cran]: https://CRAN.R-project.org/package=rvest
+[httr-web]: https://httr.r-lib.org
 ```{r links, child="links.md"}
 ```

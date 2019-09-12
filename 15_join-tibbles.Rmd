@@ -285,5 +285,8 @@ fjsp_gt <- style_table(fjsp, "full_join(x = superheroes, y = publishers)")
 make_three_gt(super_gt, pub_gt, fjsp_gt)
 ```
 
+[google-sql-join]: https://www.google.com/search?q=sql+join&tbm=isch
+[r4ds-relational-data]: https://r4ds.had.co.nz/relational-data.html
+[dplyr-vignette-two-table]: https://dplyr.tidyverse.org/articles/two-table.html
 ```{r links, child="links.md"}
 ```

@@ -124,7 +124,7 @@ It turns out these self-imposed rules are often in conflict with one another:
 
 __Example:__ after performing the country-level summarization, we reorder the levels of the country factor, based on life expectancy. This reordering operation is conceptually important and must be embodied in R commands stored in a script. However, as soon as we write `gap_life_exp` to a plain text file, that meta-information about the countries is lost. Upon re-import with `read_delim()` and friends, we are back to alphabetically ordered factor levels. Any measure we take to avoid this loss immediately breaks another one of our rules.
 
-So what do I do? I must admit I save (and re-load) R-specific binary files. Right after I save the plain text file. [Belt and suspenders][belt-and-suspenders].
+So what do I do? I must admit I save (and re-load) R-specific binary files. Right after I save the plain text file. [Belt and suspenders].
 
 I have toyed with the idea of writing import helper functions for a specific project, that would re-order factor levels in principled ways. They could be defined in one file and called from many. This would also have a very natural implementation within [a workflow where each analytical project is an R package][research-workflow]. But so far it has seemed too much like [yak shaving][yak-shaving]. I'm intrigued by a recent discussion of putting such information in YAML frontmatter (see Martin Fenner blog post [Using YAML frontmatter with CSV][yaml-with-csv]).
 
@@ -261,5 +261,14 @@ Data Manipulation in R by Phil Spector [-@spector2008].
 * See Chapter 2 ("Reading and Writing Data")
 
 
+[minimal-make]: https://kbroman.org/minimal_make/
+[belt and suspenders]: https://www.wisegeek.com/what-does-it-mean-to-wear-belt-and-suspenders.html
+[research-workflow]: https://www.carlboettiger.info/2012/05/06/research-workflow.html
+[yak-shaving]: https://seths.blog/2005/03/dont_shave_that/
+[yaml-with-csv]: https://blog.datacite.org/using-yaml-frontmatter-with-csv/
+[reproducible-examples]: https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
+["writing data for computers"]: https://twitter.com/vsbuffalo/statuses/358699162679787521
+[readr-web]: https://readr.tidyverse.org
+[readr-vignette-intro]: https://cran.r-project.org/web/packages/readr/vignettes/readr.html
 ```{r links, child="links.md"}
 ```

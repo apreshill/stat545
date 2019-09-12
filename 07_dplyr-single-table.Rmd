@@ -388,5 +388,10 @@ Blog post [Hands-on `dplyr` tutorial for faster data manipulation in R][datascho
 
 Chapter \@ref(join-cheatsheet): cheatsheet I made for `dplyr` join functions (not relevant yet but soon).
 
+[xckd-randall-munroe]: https://fivethirtyeight.com/features/xkcd-randall-munroe-qanda-what-if/
+[athena-zeus-forehead]: https://tinyurl.com/athenaforehead
+[wiki-camel-case]: https://en.wikipedia.org/wiki/Camel_case
+[purrr-web]: https://purrr.tidyverse.org
+[tidyverse-github]: https://github.com/hadley/tidyverse
 ```{r links, child="links.md"}
 ```
