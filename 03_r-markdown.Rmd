@@ -12,17 +12,17 @@ This describes a hands-on activity where the goal is to author an R Markdown doc
 
 For people also using Git and GitHub, we discuss how to keep the intermediate Markdown file, the figures, and what to commit to Git and push to GitHub. If GitHub is the primary venue, we render directly to GitHub-flavored markdown and never create HTML.
 
-The official R Markdown documentation is [here][rmarkdown].
+The official R Markdown documentation is [here][1].
 
 ## Step 0: Software installation and configuration
 
 <!--TODO: Assumes that they've already set up Git but this chapter comes before the version control chapter. How should we handle this?-->
 We assume the following:
 
-* You've already [installed Git][hg-install-git] and (probably) [a Git client][hg-git-client].
-* You've already [registered a free GitHub account][hg-github-account].
-* You've already [installed R and RStudio][hg-install-r-rstudio].
-* You've [tested your installation and configuration of Git, GitHub, and RStudio][hg-connect-intro].
+* You've already [installed Git][2] and (probably) [a Git client][3].
+* You've already [registered a free GitHub account][4].
+* You've already [installed R and RStudio][5].
+* You've [tested your installation and configuration of Git, GitHub, and RStudio][6].
 
 ## Step 1: Get ready to work
 
@@ -30,11 +30,11 @@ We assume the following:
 
 Launch RStudio, probably in the project that corresponds to the repository where you are keeping all work for this book. Make sure the workspace is clean and you've launched a fresh R process. Make sure the working directory is sensible.
 
-Git people: we assume you are working inside a Git repo -- probably one that is already set up to push/pull with a GitHub remote. That is [covered elsewhere][hg-connect-intro].
+Git people: we assume you are working inside a Git repo -- probably one that is already set up to push/pull with a GitHub remote. That is [covered elsewhere][6].
 
 ## Step 2: Practice with RStudio's boilerplate R Markdown document
 
-I am modelling "walk before you run" here. It is best, especially for novices, to increase complexity in small increments. We will test our system's ability to render the ["hello world"][wiki-hello-world] of R Markdown documents before we muddy the waters with our own, probably buggy, documents.
+I am modelling "walk before you run" here. It is best, especially for novices, to increase complexity in small increments. We will test our system's ability to render the ["hello world"][7] of R Markdown documents before we muddy the waters with our own, probably buggy, documents.
 
 Do this: *File > New File > R Markdown...*
 
@@ -156,15 +156,15 @@ This is (sort of) another example of keeping things machine- and human-readable,
 
 ### HTML on GitHub
 
-HTML files, such as `foo.html`, are not immediately useful on GitHub (though your local versions are easily viewable). Visit one and you'll see the raw HTML. Yuck. But there are ways to get a preview: such as [GitHub pages] or [htmlpreview][html-preview]. Expect some pain with HTML files inside private repos. When it becomes vital for the whole world to see proper HTML in its full glory, it's time to use a more sophisticated web publishing strategy.
+HTML files, such as `foo.html`, are not immediately useful on GitHub (though your local versions are easily viewable). Visit one and you'll see the raw HTML. Yuck. But there are ways to get a preview: such as [GitHub pages][8] or [htmlpreview][html-preview]. Expect some pain with HTML files inside private repos. When it becomes vital for the whole world to see proper HTML in its full glory, it's time to use a more sophisticated web publishing strategy.
 
-I have more [general ideas][hg-browsability] about how to make a GitHub repo function as a website.
+I have more [general ideas][9] about how to make a GitHub repo function as a website.
 
 ## Troubleshooting
 
-__Make sure RStudio and the `rmarkdown` package (and its dependencies) are up-to-date.__ In case of catastrophic failure to render R Markdown, consider that your software may be too old. R Markdown has been developing rapidly (written 2015-09), so you need a very current version of RStudio and `rmarkdown` to enjoy all the goodies we describe in this course.
+__Make sure RStudio and the rmarkdown package (and its dependencies) are up-to-date.__ In case of catastrophic failure to render R Markdown, consider that your software may be too old. R Markdown has been developing rapidly (written 2015-09), so you need a very current version of RStudio and rmarkdown to enjoy all the goodies we describe in this course.
 
-__Get rid of your `.Rprofile`__, at least temporarily. I have found that a "mature" `.Rprofile` that has accumulated haphazardly over the years can cause trouble. Specifically, if you've got anything in there relating to `knitr`, `markdown`, `rmarkdown` and RStudio stuff, it may be preventing the installation or usage of the most recent goodies (see above). Comment the whole file out or rename it something else and relaunch or even re-install RStudio.
+__Get rid of your `.Rprofile`__, at least temporarily. I have found that a "mature" `.Rprofile` that has accumulated haphazardly over the years can cause trouble. Specifically, if you've got anything in there relating to knitr, markdown, rmarkdown and RStudio stuff, it may be preventing the installation or usage of the most recent goodies (see above). Comment the whole file out or rename it something else and relaunch or even re-install RStudio.
 
 __Insert a chunk in your `.Rmd` document so that it renders even when there are errors.__ Some errors are easier to diagnose if you can execute specific R statements during rendering and leave more evidence behind for forensic examination. Put this chunk:
 
@@ -172,7 +172,7 @@ __Insert a chunk in your `.Rmd` document so that it renders even when there are 
     knitr::opts_chunk$set(error = TRUE)  
     ```
     
-near the top of your R Markdown document if you want to soldier on through errors, i.e. turn `foo.Rmd` into `foo.md` and/or `foo.html` no matter what. This is also helpful if you are writing a tutorial and want to demo code that throws an error. You might want to keep this as an [RStudio snippet][rstudio-code-snippets] for easy insertion.
+near the top of your R Markdown document if you want to soldier on through errors, i.e. turn `foo.Rmd` into `foo.md` and/or `foo.html` no matter what. This is also helpful if you are writing a tutorial and want to demo code that throws an error. You might want to keep this as an [RStudio snippet][10] for easy insertion.
 
 __Tolerate errors in one specific chunk.__ If it's undesirable to globally accept errors, you can still do this for a specific chunk like so:
 
@@ -190,20 +190,22 @@ Drop these commands into R chunks to check the above:
 * `getwd()` will display working directory at __run time__. If you monkeyed around with working directory with, e.g., the mouse, maybe it's set to one place for your interactive development and another when "Knit HTML" takes over?
 * `list.files()` will list the files in working directory. Is the file you want even there?
 
-__Don't try to change working directory within an R Markdown document__. [Just don't][knitr-faq]. That is all.
+__Don't try to change working directory within an R Markdown document__. [Just don't][11]. That is all.
 
-__Don't be in a hurry to create a complicated sub-directory structure.__ RStudio/`knitr`/`rmarkdown` (which bring you the "Knit HTML" button) are rather opinionated about the working directory being set to the `.Rmd` file's location and about all files living together in one big happy directory. This can all be worked around. But not today.
+__Don't be in a hurry to create a complicated sub-directory structure.__ RStudio/knitr/rmarkdown (which bring you the "Knit HTML" button) are rather opinionated about the working directory being set to the `.Rmd` file's location and about all files living together in one big happy directory. This can all be worked around. But not today.
 
-[rmarkdown]: https://rmarkdown.rstudio.com
-[Github pages]: https://pages.github.com
-[wiki-hello-world]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program
-[knitr-faq]: https://yihui.name/knitr/faq/
-[hg-install-git]: https://happygitwithr.com/install-git.html
-[hg-git-client]: https://happygitwithr.com/git-client.html
-[hg-github-account]: https://happygitwithr.com/github-acct.html
-[hg-install-r-rstudio]: https://happygitwithr.com/install-r-rstudio.html
-[hg-connect-intro]: https://happygitwithr.com/connect-intro.html
-[hg-browsability]: https://happygitwithr.com/workflows-browsability.html
-[rstudio-code-snippets]: https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets
+
+[1]: https://rmarkdown.rstudio.com
+[2]: https://happygitwithr.com/install-git.html
+[3]: https://happygitwithr.com/git-client.html
+[4]: https://happygitwithr.com/github-acct.html
+[5]: https://happygitwithr.com/install-r-rstudio.html
+[6]: https://happygitwithr.com/connect-intro.html
+[7]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program
+[8]: https://pages.github.com
+[9]: https://happygitwithr.com/workflows-browsability.html
+[10]: https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets
+[11]: https://yihui.name/knitr/faq/
+
 ```{r links, child="links.md"}
 ```
