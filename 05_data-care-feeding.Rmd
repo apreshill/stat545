@@ -42,7 +42,7 @@ Data frames -- unlike general arrays or, specifically, matrices in R -- can hold
 
 ## Get the Gapminder data
 
-We will work with some of the data from the [Gapminder project](https://www.gapminder.org). I've released this as an [R package](https://CRAN.R-project.org/package=gapminder), so we can install it from CRAN like so:
+We will work with some of the data from the [Gapminder project](https://www.gapminder.org). I've released this as an R package called [gapminder], so we can install it from CRAN like so:
 
 ```{r eval = FALSE}
 install.packages("gapminder")
@@ -164,7 +164,7 @@ The __levels__ of the factor `continent` are "Africa", "Americas", etc. and this
 str(gapminder$continent)
 ```
 
-This [Janus][wiki-janus]-like nature of factors means they are rich with booby traps for the unsuspecting but they are a necessary evil. I recommend you resolve to learn how to [properly care and feed for factors](#factors-boss). The pros far outweigh the cons. Specifically in modelling and figure-making, factors are anticipated and accommodated by the functions and packages you will want to exploit.
+This [Janus]-like nature of factors means they are rich with booby traps for the unsuspecting but they are a necessary evil. I recommend you resolve to learn how to [properly care and feed for factors](#factors-boss). The pros far outweigh the cons. Specifically in modelling and figure-making, factors are anticipated and accommodated by the functions and packages you will want to exploit.
 
 Here we count how many observations are associated with each continent and, as usual, try to portray that info visually. This makes it much easier to quickly see that African countries are well represented in this dataset.
 ```{r tabulate-continent}

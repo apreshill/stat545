@@ -27,7 +27,7 @@ I choose to load the tidyverse, which will load dplyr, among other packages we u
 library(tidyverse)
 ```
 
-Also load `gapminder.`
+Also load gapminder.
 ```{r message = FALSE, warning = FALSE}
 library(gapminder)
 ```
@@ -181,7 +181,7 @@ dplyr offers powerful tools to solve this class of problem:
 * `summarize()` takes a dataset with $n$ observations, computes requested summaries, and returns a dataset with 1 observation.
 * Window functions take a dataset with $n$ observations and return a dataset with $n$ observations.
 * `mutate()` and `summarize()` will honor groups.
-* You can also do very general computations on your groups with `do()`, though elsewhere in this course, I advocate for other approaches that I find more intuitive, using the [purrr package](https://purrr.tidyverse.org).
+* You can also do very general computations on your groups with `do()`, though elsewhere in this course, I advocate for other approaches that I find more intuitive, using the purrr package.
   
 Combined with the verbs you already know, these new tools allow you to solve an extremely diverse set of problems with relative ease.
 
@@ -368,7 +368,7 @@ In later tutorials, we'll explore more of dplyr, such as operations based on two
 
 ## Resources
 
-dplyr official stuff:
+[dplyr] official stuff:
 
 * Package home [on CRAN][dplyr-cran].
   - Note there are several vignettes, with the [introduction][dplyr-vignette-intro] being the most relevant right now.
@@ -376,15 +376,15 @@ dplyr official stuff:
 * Development home [on GitHub][dplyr-github].
 * [Tutorial HW delivered][useR-2014-dropbox] (note this links to a DropBox folder) at useR! 2014 conference.     
     
-[RStudio Data Transformation Cheat Sheet][rstudio-dplyr-cheatsheet-download], covering dplyr. Remember you can get to these via *Help > Cheatsheets.* 
+[RStudio Data Transformation with dplyr Cheat Sheet]. Remember you can get to these via *Help > Cheatsheets.* 
 
-[Data transformation][r4ds-transform] chapter of [R for Data Science][r4ds] [@wickham2016].
-
-<!--TODO: This should probably be updated with something more recent-->
-[Excellent slides][tj-mahr-slides] on pipelines and dplyr by TJ Mahr, talk given to the Madison R Users Group.
+[Data transformation][r4ds-transform] chapter of [R for Data Science] [@wickham2016].
 
 <!--TODO: This should probably be updated with something more recent-->
-Blog post [Hands-on dplyr tutorial for faster data manipulation in R][dataschool-dplyr] by Data School, that includes a link to an R Markdown document and links to videos.
+[Let the Data Flow: Pipelines in R with dplyr and magrittr] - Excellent slides on pipelines and dplyr by TJ Mahr, talk given to the Madison R Users Group.
+
+<!--TODO: This should probably be updated with something more recent-->
+Blog post [Hands-on dplyr tutorial for faster data manipulation in R] by Data School, that includes a link to an R Markdown document and links to videos.
 
 Chapter \@ref(join-cheatsheet): cheatsheet I made for dplyr join functions (not relevant yet but soon).
 

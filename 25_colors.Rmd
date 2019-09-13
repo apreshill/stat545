@@ -309,9 +309,9 @@ Here are some functions to read up on if you want to learn more -- don't forget 
 
 The RGB color space or model is by no means the only or best one. It's natural for describing colors for display on a computer screen but some really important color picking tasks are hard to execute in this model. For example, it's not obvious how to construct a qualitative palette where the colors are easy for humans to distinguish, but are also perceptually comparable to one other. Appreciate this: we can use RGB to describe colors to the computer __but we don't have to use it as the space where we construct color systems__.
 
-Color models generally have three dimensions, as RGB does, due to the physiological reality that humans have three different receptors in the retina. ([Here is an informative blog post][favorite-rgb-color] on RGB and the human visual system.) The closer a color model's dimensions correspond to distinct qualities people can perceive, the more useful it is. This correspondence facilitates the deliberate construction of palettes and paths through color space with specific properties. RGB lacks this concordance with human perception. Just because you have photoreceptors that detect red, green, and blue light, it doesn't mean that your *perceptual experience* of color breaks down that way. Do you experience the color yellow as a mix of red and green light? No, of course not, but that's the physiological reality. An RGB alternative you may have encountered is the Hue-Saturation-Value (HSV) model. Unfortunately, it is also quite problematic for color picking, due to its dimensions being confounded with each other.
+Color models generally have three dimensions, as RGB does, due to the physiological reality that humans have three different receptors in the retina. ([My favorite RGB color] is an informative blog post on RGB and the human visual system.) The closer a color model's dimensions correspond to distinct qualities people can perceive, the more useful it is. This correspondence facilitates the deliberate construction of palettes and paths through color space with specific properties. RGB lacks this concordance with human perception. Just because you have photoreceptors that detect red, green, and blue light, it doesn't mean that your *perceptual experience* of color breaks down that way. Do you experience the color yellow as a mix of red and green light? No, of course not, but that's the physiological reality. An RGB alternative you may have encountered is the Hue-Saturation-Value (HSV) model. Unfortunately, it is also quite problematic for color picking, due to its dimensions being confounded with each other.
 
-What are the good perceptually-based color models? CIELUV and CIELAB are two well-known examples. We will focus on a variant of CIELUV, namely the Hue-Chroma-Luminance (HCL) model. It is written up nicely for an R audience in Zeileis et al.'s ["Escaping RGBland: Selecting Colors for Statistical Graphs"][escaping-rgbland-pdf] in [Computational Statistics & Data Analysis][escaping-rgbland-doi] [-@zeileis2009]. There is a companion R package colorspace, which will help you to explore and exploit the HCL color model. Finally, this color model is fully embraced in ggplot2 (as are the RColorBrewer palettes).
+What are the good perceptually-based color models? CIELUV and CIELAB are two well-known examples. We will focus on a variant of CIELUV, namely the Hue-Chroma-Luminance (HCL) model. It is written up nicely for an R audience in Zeileis et al.'s ["Escaping RGBland: Selecting Colors for Statistical Graphs"] in Computational Statistics & Data Analysis [-@zeileis2009]. There is a companion R package colorspace, which will help you to explore and exploit the HCL color model. Finally, this color model is fully embraced in ggplot2 (as are the RColorBrewer palettes).
 
 Here's what I can tell you about the HCL model's three dimensions:
 
@@ -321,10 +321,10 @@ Here's what I can tell you about the HCL model's three dimensions:
   
 Full disclosure: I have a hard time really grasping and distinguishing chroma and luminance. As we point out above, they are not entirely independent, which speaks to the weird shape of the 3 dimensional HCL space.
   
-This figure in Wickham's [ggplot2: Elegant Graphics for Data Analysis][ggplot2-book] [-@wickham2009] book is helpful for understanding the HCL color space:
+This figure in Wickham's [ggplot2: Elegant Graphics for Data Analysis] [-@wickham2009] book is helpful for understanding the HCL color space:
 
 
-```{r echo = FALSE, fig.cap = "From [ggplot2: Elegant Graphics for Data Analysis][ggplot2-book] by Hadley Wickham [-@wickham2009]"}
+```{r echo = FALSE, fig.cap = "From [ggplot2: Elegant Graphics for Data Analysis] by Hadley Wickham [-@wickham2009]"}
 knitr::include_graphics("img/ggplot2book-fig6.6.png")
 ```
 
@@ -335,7 +335,7 @@ A valuable contribution of the colorspace package is that it provides functions 
 
 Here is an article that uses compelling examples to advocate for perceptually based color systems and to demonstrate the importance of signalling where zero is in colorspace:
 
-* ["Why Should Engineers and Scientists Be Worried About Color?"][worry-about-color] [@rogowitz1996]
+* ["Why Should Engineers and Scientists Be Worried About Color?"] [@rogowitz1996]
 
 <!--TODO: Insert/recreate some visuals from the Zeileis et al. paper or from the colorspace vignette. Show actual usage! -->
 
@@ -456,25 +456,21 @@ par(opar)
 
 ## Resources
 
-* Zeileis et al.'s ["Escaping RGBland: Selecting Colors for Statistical Graphs"][escaping-rgbland-pdf] in [Computational Statistics & Data Analysis][escaping-rgbland-doi] [-@zeileis2009]. 
+* Zeileis et al.'s ["Escaping RGBland: Selecting Colors for Statistical Graphs"] in Computational Statistics & Data Analysis [-@zeileis2009]. 
 * [Vignette](https://cran.r-project.org/web/packages/colorspace/vignettes/hcl-colors.pdf) for the [colorspace](https://CRAN.R-project.org/package=colorspace) package.
 * Earl F. Glynn (Stowers Institute for Medical Research):
     + [Excellent resources](https://web.archive.org/web/20121022044903/http://research.stowers-institute.org/efg/R/Color/Chart/) for named colors, i.e. the ones available via `colors()`.
     + Informative talk ["Using Color in R"](https://www.uv.es/conesa/CursoR/material/UsingColorInR.pdf), though features some questionable *use* of color itself.
-* Blog post [My favorite RGB color][favorite-rgb-color] on the Many World Theory blog.
+* Blog post [My favorite RGB color] on the Many World Theory blog.
 * Wickham's [ggplot2: Elegant Graphics for Data Analysis](https://www.springer.com/gp/book/9780387981413) [-@wickham2009].
   + [Online docs (nice!)](https://docs.ggplot2.org/current/)
-  + [Package webpage][ggplot2-web]
+  + [Package webpage][ggplot2]
   + ggplot2 on [CRAN](https://CRAN.R-project.org/package=ggplot2) and [GitHub](https://github.com/tidyverse/ggplot2)
   + Section 6.4.3 Colour
-* ["Why Should Engineers and Scientists Be Worried About Color?"][worry-about-color] by Bernice E. Rogowitz and Lloyd A. Treinish of IBM Research [-@rogowitz1996], h/t [\@EdwardTufte](https://twitter.com/EdwardTufte).
+* ["Why Should Engineers and Scientists Be Worried About Color?"] by Bernice E. Rogowitz and Lloyd A. Treinish of IBM Research [-@rogowitz1996], h/t [\@EdwardTufte](https://twitter.com/EdwardTufte).
 
 
-[ggplot2-book]: https://ggplot2-book.org/index.html
-[favorite-rgb-color]: https://manyworldstheory.com/2013/01/15/my-favorite-rgb-color/
-[escaping-rgbland-pdf]: https://eeecon.uibk.ac.at/~zeileis/papers/Zeileis+Hornik+Murrell-2009.pdf
-[escaping-rgbland-doi]: https://doi.org/10.1016/j.csda.2008.11.033
-[worry-about-color]: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwi0xYqJ8JbjAhWNvp4KHViYDxsQFjABegQIABAC&url=https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FAhmed_Elhattab2%2Fpost%2FPlease_suggest_some_good_3D_plot_tool_Software_for_surface_plot%2Fattachment%2F5c05ba35cfe4a7645506948e%2FAS%253A699894335557644%25401543879221725%2Fdownload%2FWhy%2BShould%2BEngineers%2Band%2BScientists%2BBe%2BWorried%2BAbout%2BColor_.pdf&usg=AOvVaw1qwjjGMd7h_z6TLUjzu7Nb
+[My favorite RGB color]: https://manyworldstheory.com/2013/01/15/my-favorite-rgb-color/
 
 ```{r links, child="links.md"}
 ```

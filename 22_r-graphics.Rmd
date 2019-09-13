@@ -15,7 +15,7 @@ We work on visualization throughout the course. Here are the bits in rough order
   - The underappreciated importance of data.frames, tidy data, and factor management to graphics
   - Basic jargon of ggplot2
 * Chapter \@ref(ggplot2-tutorial) - Learning ggplot2 by using it
-  - My [ggplot2 tutorial][ggplot2-tutorial] gives indicative code and all resulting figures 
+  - My [ggplot2 tutorial] gives indicative code and all resulting figures 
   - Scatterplots, stripplots, distributions, bars, themes, managing a color scheme, bubble and line plots
 * Chapter \@ref(effective-graphs) - Do's and don'ts of making effective graphs
   - Effective = easy for audience to decode numerical info
@@ -33,7 +33,7 @@ We work on visualization throughout the course. Here are the bits in rough order
 
 <!--JB:
 * The [R Graph Catalog](http://shiny.stat.ubc.ca/r-graph-catalog/) presents a visual, clickable index of 100+ figures
-    - mostly from Naomi Robbins' book ["Creating More Effective Graphs"](http://www.amazon.com/Creating-Effective-Graphs-Naomi-Robbins/dp/0985911123)
+    - mostly from Naomi Robbins' book [Creating More Effective Graphs]
     - see figure and the exact ggplot2 code to produce it, side-by-side
     - code for all figures and app itself is on [GitHub](https://github.com/jennybc/r-graph-catalog)
 * underappreciated basics: density plots, high-volume scatterplots good stuff here: http://www.ugrad.stat.ubc.ca/~stat540/seminars/seminar03_graphics-ggplot2.html

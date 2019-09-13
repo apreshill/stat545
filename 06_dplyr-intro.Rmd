@@ -8,7 +8,7 @@ source("common.R")
 
 ## Intro
 
-[dplyr](https://dplyr.tidyverse.org) is a package for data manipulation, developed by Hadley Wickham and Romain Francois. It is built to be fast, highly expressive, and open-minded about how your data is stored. It is installed as part of the [tidyverse] meta-package and, as a core package, it is among those loaded via `library(tidyverse)`.
+[dplyr] is a package for data manipulation, developed by Hadley Wickham and Romain Francois. It is built to be fast, highly expressive, and open-minded about how your data is stored. It is installed as part of the [tidyverse] meta-package and, as a core package, it is among those loaded via `library(tidyverse)`.
 
 dplyr's roots are in an earlier package called [plyr](http://plyr.had.co.nz), which implements the ["split-apply-combine" strategy for data analysis](https://www.jstatsoft.org/article/view/v040i01) [@wickham2011a]. Where plyr covers a diverse set of inputs and outputs (e.g., arrays, data frames, lists), dplyr has a laser-like focus on data frames or, in the tidyverse, "tibbles". dplyr is a package-level treatment of the `ddply()` function from plyr, because "data frame in, data frame out" proved to be so incredibly important.
 
@@ -182,7 +182,7 @@ Go to the next Chapter, [dplyr functions for a single dataset](#dplyr-single), f
 
 ## Resources
 
-dplyr official stuff:
+[dplyr] official stuff:
 
 * Package home [on CRAN][dplyr-cran].
   - Note there are several vignettes, with the [introduction][dplyr-vignette-intro] being the most relevant right now.
@@ -190,15 +190,15 @@ dplyr official stuff:
 * Development home [on GitHub][dplyr-github].
 * [Tutorial HW delivered][useR-2014-dropbox] (note this links to a DropBox folder) at useR! 2014 conference.     
     
-[RStudio Data Transformation Cheat Sheet][rstudio-dplyr-cheatsheet-download], covering dplyr. Remember you can get to these via *Help > Cheatsheets.* 
+[RStudio Data Transformation with dplyr Cheat Sheet]. Remember you can get to these via *Help > Cheatsheets.* 
 
-[Data transformation][r4ds-transform] chapter of [R for Data Science][r4ds] [@wickham2016].
-
-<!--TODO: This should probably be updated with something more recent-->
-[Excellent slides][tj-mahr-slides] on pipelines and dplyr by TJ Mahr, talk given to the Madison R Users Group.
+[Data transformation][r4ds-transform] chapter of [R for Data Science] [@wickham2016].
 
 <!--TODO: This should probably be updated with something more recent-->
-Blog post [Hands-on dplyr tutorial for faster data manipulation in R][dataschool-dplyr] by Data School, that includes a link to an R Markdown document and links to videos.
+[Let the Data Flow: Pipelines in R with dplyr and magrittr] - Excellent slides on pipelines and dplyr by TJ Mahr, talk given to the Madison R Users Group.
+
+<!--TODO: This should probably be updated with something more recent-->
+Blog post [Hands-on dplyr tutorial for faster data manipulation in R] by Data School, that includes a link to an R Markdown document and links to videos.
 
 Chapter \@ref(join-cheatsheet): cheatsheet I made for dplyr join functions (not relevant yet but soon).
 

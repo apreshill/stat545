@@ -70,7 +70,7 @@ Examples for those of us who don't speak SQL so good. There are lots of [Venn di
 Other great places to read about joins:
 
 * The dplyr vignette on [Two-table verbs](https://dplyr.tidyverse.org/articles/two-table.html).
-* The [Relational data chapter](https://r4ds.had.co.nz/relational-data.html) in [R for Data Science][r4ds] [@wickham2016]. Excellent diagrams.
+* The [Relational data chapter](https://r4ds.had.co.nz/relational-data.html) in [R for Data Science] [@wickham2016]. Excellent diagrams.
   
 ## The data
 

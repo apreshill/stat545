@@ -46,11 +46,11 @@ p_scatter <- ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 grid.arrange(p_dens, p_scatter, nrow = 2, heights = c(0.35, 0.65))
 ```
 
-You can find other examples of this workflow in the [R Graph Catalog][r-graph-catalog-github].
+You can find other examples of this workflow in the [R Graph Catalog].
 
 ## Use the `multiplot()` function
 
-In the [Graphs][cookbook-for-r-multigraphs] chapter of his [Cookbook for R][cookbook-for-r], Winston Chang uses the grid package to define the `multiplot()` function:
+In the [Graphs][cookbook-for-r-multigraphs] chapter of his [Cookbook for R], Winston Chang uses the grid package to define the `multiplot()` function:
 
 ```{r chang-cookbook, eval = FALSE}
 # Multiple plot function
@@ -119,7 +119,6 @@ Check out [the vignette](https://cran.r-project.org/web/packages/cowplot/vignett
 
 
 [cookbook-for-r-multigraphs]: http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
-
 
 ```{r links, child="links.md"}
 ```

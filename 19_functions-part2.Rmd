@@ -178,7 +178,7 @@ Where to next? In [part 3](#functions-part3) we tackle `NA`s, the special `...` 
 
 ## Resources
 
-Hadley Wickham's book [Advanced R][adv-r] [-@wickham2015a]:
+Hadley Wickham's book [Advanced R] [-@wickham2015a]:
 
 * Section on [function arguments][adv-r-fxn-args]
 * Section on [return values](http://adv-r.had.co.nz/Functions.html#return-values)

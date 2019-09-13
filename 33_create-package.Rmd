@@ -6,7 +6,7 @@ source("common.R")
 
 <!--Original content: https://stat545.com/packages06_foofactors-package.html-->
 
-This section closely tracks with content from the book [R Packages] by Hadley Wickham and Jenny Bryan [-@wickham-unpub], specifically the [The Whole Game][r-pkgs-whole-game] chapter. The material in this chapter is, however, accurate and up-to-date, although a bit longer than [The Whole Game][r-pkgs-whole-game]. The [R Packages] book is a great place to go next to learn more. 
+This section closely tracks with content from the book [R Packages] by Hadley Wickham and Jenny Bryan [-@wickham-unpub], specifically the [The Whole Game] chapter. The material in this chapter is, however, accurate and up-to-date, although a bit longer than [The Whole Game]. The [R Packages] book is a great place to go next to learn more. 
 
 
 ```{r, include = FALSE}
@@ -25,7 +25,7 @@ where <- "tmp_session"
 
 ## Why devtools?
 
-We use the [devtools][devtools-web] package to facilitate package development. It’s on [CRAN][devtools-cran] and developed on [GitHub][devtools-github]. Why devtools? 
+We use the [devtools] package to facilitate package development. It’s on [CRAN][devtools-cran] and developed on [GitHub][devtools-github]. Why devtools? 
 
 * Ensure your package source has the format of a valid R package
 * Provide a fluid workflow for package development: tweak it, use it, ... lather, rinse, repeat
@@ -65,9 +65,9 @@ if (interactive()) {
 }
 ```
 
-The helper `use_devtools()` creates this file, if needed, opens it for editing, and puts the necessary lines of code on the clipboard and the screen. Another package you may want to handle this way is [testthat][testthat-web].
+The helper `use_devtools()` creates this file, if needed, opens it for editing, and puts the necessary lines of code on the clipboard and the screen. Another package you may want to handle this way is [testthat].
 
-For presentation purposes only, we use the [tidyverse], for light data wrangling, and [fs][fs-web], for filesystem work.
+For presentation purposes only, we use the [tidyverse], for light data wrangling, and [fs], for filesystem work.
 
 ```{r, R.options = list(tidyverse.quiet = TRUE)}
 library(tidyverse)
@@ -92,10 +92,10 @@ We use various functions from devtools to build a small toy package from scratch
 * Version control and an open development process.
   - This is completely optional in your work, but recommended. You'll see how Git and GitHub helps us expose all the intermediate stages of our package.
 * Documentation for individual functions via [roxygen2].
-* Unit testing with [testthat][testthat-web].
+* Unit testing with [testthat].
 * Documentation for the package as a whole via an executable `README.Rmd`.
 
-We call the package foofactors and it will have a couple functions for handling factors. Please note that these functions are super simple and definitely not the point! For a proper package for factor handling, please see the [forcats][forcats-web] package.
+We call the package foofactors and it will have a couple functions for handling factors. Please note that these functions are super simple and definitely not the point! For a proper package for factor handling, please see the [forcats] package.
 
 The foofactors package itself is not our goal here. It is a device for demonstrating a typical workflow for package development with devtools.
 
@@ -164,7 +164,7 @@ proj_sitrep()
 
 If you use RStudio, navigate to this directory and double click on `foofactors.Rproj` to launch a new instance of RStudio in the project that is also your foofactors package. RStudio has special handling for packages and you should now see a Build tab in the same pane as Environment and History.
 
-What files are in this new directory? Here's a listing using the [fs package][fs-web] (locally, you can consult your Files pane):
+What files are in this new directory? Here's a listing using the [fs] package (locally, you can consult your Files pane):
 
 ```{r init-show-files, echo = FALSE, eval = create}
 dir_tree(path = ".", all = TRUE, glob = "TRUE", invert = TRUE, recurse = FALSE)
@@ -430,7 +430,7 @@ Success!
 
 ## Edit `DESCRIPTION`
 
-Before we tackle the warnings about the license and documentation, let’s work on the boilerplate content in `DESCRIPTION.` The `DESCRIPTION` file provides metadata about your package:
+Before we tackle the warnings about the license and documentation, let’s work on the boilerplate content in `DESCRIPTION`. The `DESCRIPTION` file provides metadata about your package:
 
 * Read more in the [Package metadata](https://r-pkgs.org/description.html) chapter of [R Packages] [@wickham-unpub]
 * Read more in [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file)
@@ -557,7 +557,7 @@ Does it show up in the usual help pane? Looking like real documentation? Isn't t
 
 Your package's documentation won't be properly wired up until you do a full "Build & Reload". I'm referring to the links between help files, the link to the package index, etc.
 
-The RStudio [Package Development with devtools Cheat Sheet][devtools-cheatsheet] has really nice coverage of roxygen comment syntax. You can also get information from *Help > Roxygen Quick Reference*.
+The RStudio [Package Development with devtools Cheat Sheet] has really nice coverage of roxygen comment syntax. You can also get information from *Help > Roxygen Quick Reference*.
 
 ### `NAMESPACE` changes
 
@@ -1096,7 +1096,7 @@ getwd()
 
 
 [r-pkgs-namespace]: https://r-pkgs.org/namespace.html
-[r-pkgs-whole-game]: https://r-pkgs.org/whole-game.html
+[The Whole Game]: https://r-pkgs.org/whole-game.html
 [usethis-cran]: https://CRAN.R-project.org/package=usethis
 [usethis-github]: https://github.com/r-lib/usethis
 

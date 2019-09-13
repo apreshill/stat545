@@ -20,9 +20,9 @@ Here we discuss common remedial tasks for dealing with date-times.
 
 I start with this because we cannot possibly do this topic justice in a short amount of time. Our goal is to make you aware of specific problems and solutions. Once you have a character problem in real life, these resources will be extremely helpful as you delve deeper.
 
-[Dates and times](https://r4ds.had.co.nz/dates-and-times.html) chapter from [R for Data Science][r4ds] by Hadley Wickham and Garrett Grolemund [-@wickham2016]. See also the subsection on dates and times in the [Data import chapter][r4ds-data-import].
+[Dates and times](https://r4ds.had.co.nz/dates-and-times.html) chapter from [R for Data Science] by Hadley Wickham and Garrett Grolemund [-@wickham2016]. See also the subsection on dates and times in the [Data import chapter][r4ds-data-import].
 
-The [lubridate](https://lubridate.tidyverse.org) package ([CRAN](https://CRAN.R-project.org/package=lubridate); [GitHub](https://github.com/tidyverse/lubridate); [main vignette](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html)).
+The [lubridate] package ([CRAN](https://CRAN.R-project.org/package=lubridate); [GitHub](https://github.com/tidyverse/lubridate); [main vignette](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html)).
 
 Grolemund and Wickham's paper on lubridate in the Journal of Statistical Software [-@grolemund2011].
 

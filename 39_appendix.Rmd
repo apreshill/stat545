@@ -56,18 +56,18 @@ Figure \@ref(fig:draw-an-owl) is an image that is often used to illustrate how h
 
 I recently needed to draw a f\*cking owl in R, so I decided to record the process as an experiment.
 
-When I teach [STAT 545][stat-545] or [Software Carpentry][software-carpentry], I try to convey as much about *process* as anything else. You can always look up technical details, e.g., syntax, but you don't usually get to see how other people work. This is also how I approach teaching about [writing R functions](#functions-part1). Newcomers often look at finished code and assume it flowed perfectly formed out of someone's fingertips. It probably did not.
+When I teach [STAT 545][stat545-url] or [Software Carpentry](https://software-carpentry.org), I try to convey as much about *process* as anything else. You can always look up technical details, e.g., syntax, but you don't usually get to see how other people work. This is also how I approach teaching about [writing R functions](#functions-part1). Newcomers often look at finished code and assume it flowed perfectly formed out of someone's fingertips. It probably did not.
 
 My *modus operandi*: start with something that works and add features in small increments, maniacally checking that everything still works. Other people undoubtedly move faster (and, therefore, travel faster but crash harder), but I'm OK with that.
 
 
 ### Context: writing a function factory
 
-I have an R package [`googlesheets`][googlesheets-github] that gets Google Sheets in and out of R. Lately we've had a lot of trouble with  `Internal Server Error (HTTP 500)`, which, as you might expect, is an error on the Google server side. All you can do as a user is try, try again. But this is a showstopper for unattended scripts or multi-step operations, like building and checking the package. A single error renders lots of other work moot, which is completely infuriating.
+I have an R package [googlesheets] that gets Google Sheets in and out of R. Lately we've had a lot of trouble with  `Internal Server Error (HTTP 500)`, which, as you might expect, is an error on the Google server side. All you can do as a user is try, try again. But this is a showstopper for unattended scripts or multi-step operations, like building and checking the package. A single error renders lots of other work moot, which is completely infuriating.
 
 I want to catch these errors and automatically retry the request after an appropriate delay.
 
-The brute force approach would be to literally drop little `for` or `while` loops all over the package, to inspect the response and retry if necessary. But I try to follow the [DRY principle][wiki-dry], so would prefer to write a new "retry-capable" version of the function that makes these http requests.
+The brute force approach would be to literally drop little `for` or `while` loops all over the package, to inspect the response and retry if necessary. But I try to follow the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), so would prefer to write a new "retry-capable" version of the function that makes these http requests.
 
 It also turns out there's more than one function for making these requests. I'm talking about the [HTTP verbs you use with REST APIs](https://www.restapitutorial.com/lessons/httpmethods.html): GET, POST, PATCH, etc. I potentially need to give them all the "retry" treatment. So what I really need is a *function factory*: an HTTP verb goes in and out comes a retry-capable version of the verb.
 
@@ -75,7 +75,7 @@ It turns out you can write R (or S) for ~20 years and not be very facile with th
 
 ### Start at the beginning
 
-My reference is the section of Wickham's [Advanced R][adv-r] [-@wickham2015a] that is about [closures][adv-r-closures], "functions written by functions". Here's one of the two main examples: a function that creates an exponentiation function.
+My reference is the section of Wickham's [Advanced R] [-@wickham2015a] that is about [closures](http://adv-r.had.co.nz/Functional-programming.html#closures), "functions written by functions". Here's one of the two main examples: a function that creates an exponentiation function.
 
 ```{r}
 power <- function(exponent) {
@@ -189,9 +189,9 @@ replicate(5, VERB_twice())
 
 I like it! What do I like about it?
 
-  * 5 calls produce 10 messages, which tells me `VERB()` is getting called twice.
-  * 5 calls produce 5 outputs, which is good for my eventual goal, where I will only want to return the value of the last call of the enclosed function.
-  
+* 5 calls produce 10 messages, which tells me `VERB()` is getting called twice.
+* 5 calls produce 5 outputs, which is good for my eventual goal, where I will only want to return the value of the last call of the enclosed function.
+
 ### Retry `n` times ... and a temporary setback
 
 Instead of hard-wiring 2 calls of the enclosed function `f`, let's call it `n` times via a `for` loop.
@@ -287,11 +287,11 @@ The final version of the function factory is about a dozen lines of fairly pedes
 
 ## How to obtain a bunch of GitHub issues or pull requests with R {#gh-package}
 
-[Using dplyr + purrr + tidyr](https://github.com/jennybc/analyze-github-stuff-with-r) to analyze data about GitHub repos via the [`gh` package][gh-github]
+[Using dplyr + purrr + tidyr](https://github.com/jennybc/analyze-github-stuff-with-r) to analyze data about GitHub repos via the [gh] package.
 
-## How to tame XML with nested data frames and `purrr` {#tame-google-sheets}
+## How to tame XML with nested data frames and purrr {#tame-google-sheets}
 
-[Using `dplyr` + `purrr` + `tidyr` + `xml2`](https://github.com/jennybc/manipulate-xml-with-purrr-dplyr-tidyr) to tame the annoying XML from Google Sheets
+[Using dplyr + purrr + tidyr + xml2](https://github.com/jennybc/manipulate-xml-with-purrr-dplyr-tidyr) to tame the annoying XML from Google Sheets.
 
 ## Make browsing your GitHub repos more rewarding {#github-browsability}
 
@@ -389,9 +389,9 @@ If you have an HTML file in a GitHub repository, simply visiting the file shows 
 
   * <https://github.com/STAT545-UBC/STAT545-UBC.github.io/blob/master/bit003_api-key-env-var.html>
 
-No one wants to look at that. ~~You can provide this URL to [rawgit.com](http://rawgit.com) to serve this HTML more properly and get a decent preview.~~
+No one wants to look at that. ~~You can provide this URL to [RawGit] to serve this HTML more properly and get a decent preview.~~
 
-~~You can form two different types of URLs with [rawgit.com](http://rawgit.com):~~
+~~You can form two different types of URLs with [RawGit]:~~
 
 * ~~For sharing low-traffic, temporary examples or demos with small numbers of people, do this:~~
   - ~~<https://rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html>~~
@@ -400,10 +400,10 @@ No one wants to look at that. ~~You can provide this URL to [rawgit.com](http://
   - ~~<https://cdn.rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html>~~
   - ~~Basically: replace `https://github.com/` with `https://cdn.rawgit.com/`~~
 
-*2018-10-09 update: RawGit [announced](https://rawgit.com/) that it is in a sunset phase and will soon shut down. They recommended: [jsDelivr](https://www.jsdelivr.com/rawgit), [GitHub Pages](https://pages.github.com/), [CodeSandbox](https://codesandbox.io/), and [unpkg](https://unpkg.com/#/) as alternatives.*
+*2018-10-09 update: RawGit [announced][RawGit] that it is in a sunset phase and will soon shut down. They recommended: [jsDelivr](https://www.jsdelivr.com/rawgit), [GitHub Pages](https://pages.github.com/), [CodeSandbox](https://codesandbox.io/), and [unpkg](https://unpkg.com/#/) as alternatives.*
 
 
-You may also want to check out this [Chrome extension](https://chrome.google.com/webstore/detail/github-html-preview/cphnnfjainnhgejcpgboeeakfkgbkfek?hl=en) or [GitHub & BitBucket HTML Preview][html-preview].
+You may also want to check out this [Chrome extension](https://chrome.google.com/webstore/detail/github-html-preview/cphnnfjainnhgejcpgboeeakfkgbkfek?hl=en) or [GitHub & BitBucket HTML Preview].
 
 This sort of enhanced link might be one of the useful things to put in a `README.md` or other Markdown file in the repo.
 
@@ -475,7 +475,7 @@ AFAIK, to do that in a slick automatic way across an entire repo/site, you need 
 
 ## How to send a bunch of emails from R {#email-in-r}
 
-[Workflow](https://github.com/jennybc/send-email-with-r) for sending email with R and [`gmailr`](https://CRAN.R-project.org/package=gmailr).
+[Workflow](https://github.com/jennybc/send-email-with-r) for sending email with R and [gmailr](https://CRAN.R-project.org/package=gmailr).
 
 ## Store an API key as an environment variable {#store-api-key}
 
@@ -495,26 +495,22 @@ Data used: words spoken by characters of different races and gender in the Lord 
 
 * [Directory of this lesson](https://github.com/datacarpentry/datacarpentry/tree/master/lessons/tidy-data) in the Data Carpentry GitHub repo.
 * [01-intro](https://github.com/datacarpentry/datacarpentry/blob/master/lessons/tidy-data/01-intro.md) shows untidy and tidy data. Then we demonstrate how tidy data is more useful for analysis and visualization. Includes references, resources, and exercises.
-* [02-tidy](https://github.com/datacarpentry/datacarpentry/blob/master/lessons/tidy-data/02-tidy.md) shows __how__ to tidy data, using `gather()` from the `tidyr` package. Includes references, resources, and exercises.
+* [02-tidy](https://github.com/datacarpentry/datacarpentry/blob/master/lessons/tidy-data/02-tidy.md) shows __how__ to tidy data, using `gather()` from the tidyr package. Includes references, resources, and exercises.
 * [03-tidy-bonus-content](https://github.com/datacarpentry/datacarpentry/blob/master/lessons/tidy-data/03-tidy-bonus-content.md) is not part of the lesson but may be useful as learners try to apply the principles of tidy data in more general settings. Includes links to packages used.
 
 Learner-facing dependencies:
 
 * Files in the `tidy-data` sub-directory of the Data Carpentry `data` directory.
-* `tidyr` package (only true dependency).
-* `ggplot2` is used for illustration but is not mission critical. 
-* `dplyr` and `reshape2` are used in the bonus content.
+* [tidyr] package (only true dependency).
+* [ggplot2] is used for illustration but is not mission critical. 
+* [dplyr] and [reshape2](https://github.com/hadley/reshape) are used in the bonus content.
 
 Instructor dependencies:
 
 * [curl] if you execute the code to grab the Lord of the Rings data used in examples from GitHub. Note that the files are also included in the `datacarpentry/data/tidy-data` directory, so data download is avoidable.
-* `rmarkdown`, `knitr`, and `xtable` if you want to compile the `Rmd` to `md` and `html`.
+* [rmarkdown], [knitr], and xtable if you want to compile the `Rmd` to `md` and `html`.
 
+[RawGit]: https://rawgit.com
 
-[wiki-dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[adv-r-closures]: http://adv-r.had.co.nz/Functional-programming.html#closures
-[gh-github]: https://github.com/r-lib/gh
-[googlesheets-github]: https://github.com/jennybc/googlesheets
-[software-carpentry]: https://software-carpentry.org
 ```{r links, child="links.md"}
 ```
