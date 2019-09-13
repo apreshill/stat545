@@ -50,9 +50,9 @@ Although we spend a lot of time working with data interactively, this sort of ha
 * Other, more modern data-oriented alternatives to `make`:
   + [Drake](https://github.com/Factual/drake), a kind of "make for data"
   + [Nextflow](https://www.nextflow.io) for "data-driven computational pipelines"
-  + [`remake`](https://github.com/richfitz/remake), "Make-like declarative workflows in R"
+  + [remake](https://github.com/richfitz/remake), "Make-like declarative workflows in R"
 * [Managing Projects with GNU Make, 3rd Edition](http://shop.oreilly.com/product/9780596006105.do) by Robert Mecklenburg [-@mecklenburg2009] is a fantastic book but, sadly, is very focused on compiling software.
-* [`littler`](http://dirk.eddelbuettel.com/code/littler.html) is an R package maintained by Dirk Eddelbuettel that "provides the `r` program, a simplified command-line interface for GNU R."
+* [littler](http://dirk.eddelbuettel.com/code/littler.html) is an R package maintained by Dirk Eddelbuettel that "provides the `r` program, a simplified command-line interface for GNU R."
 
 
 # Why and how we automate data analyses + examples {#automation-slides}
@@ -546,5 +546,6 @@ There are three more toy pipelines, using the Lord of the Rings data, that reinf
 * [`03_automation-example_render-without-rstudio`](https://github.com/STAT545-UBC/STAT545-UBC.github.io/tree/master/automation10_holding-area/03_automation-example_render-without-rstudio) - use of `rmarkdown::render()` from a `Makefile`, as the default way of running an R script or an R Markdown document, leading to pretty HTML reports without any mouse clicks.
 
 [hg-shell]: https://happygitwithr.com/shell.html
+
 ```{r links, child="links.md"}
 ```

@@ -12,12 +12,12 @@ We've covered many topics on how to manipulate and reshape a single data frame:
 
 * Chapter \@ref(basic-data-care) - Basic care and feeding of data in R
   + Data frames (and tibbles) are awesome.
-* Chapter \@ref(dplyr-intro) - Introduction to `dplyr`
+* Chapter \@ref(dplyr-intro) - Introduction to dplyr
   + Filter, select, the pipe.
-* Chapter \@ref(dplyr-single) - `dplyr` functions for a single dataset
+* Chapter \@ref(dplyr-single) - dplyr functions for a single dataset
   + Single table verbs.
 * Chapter \@ref(tidy-data) - Tidy data using Lord of the Rings
-  + Tidy data, `tidyr`. 
+  + Tidy data, tidyr. 
   + *This actually kicks off with a row bind operation, discussed below.*
 
 But what if your data arrives in many pieces? There are many good (and bad) reasons why this might happen. How do you get it into one big beautiful tibble? These tasks break down into 3 main classes:
@@ -105,7 +105,7 @@ In conclusion, row binding usually works when it should (especially with `dplyr:
 
 Column binding is much more dangerous because it often "works" when it should not. It's **your job** to the rows are aligned and it's all too easy to screw this up.
 
-The data in `gapminder` was originally excavated from 3 messy Excel spreadsheets: one each for life expectancy, population, and GDP per capital. Let's relive some of the data wrangling joy and show a column bind gone wrong.
+The data in gapminder was originally excavated from 3 messy Excel spreadsheets: one each for life expectancy, population, and GDP per capital. Let's relive some of the data wrangling joy and show a column bind gone wrong.
 
 I create 3 separate data frames, do some evil row sorting, then column bind. There are no errors. The result `gapminder_garbage` sort of looks OK. Univariate summary statistics and exploratory plots will look OK. But I've created complete nonsense!
 
@@ -133,7 +133,7 @@ range(gapminder_garbage$gdpPercap)
 
 One last cautionary tale about column binding. This one requires the use of `cbind()` and it's why the tidyverse is generally unwilling to recycle when combining things of different length.
 
-I create a tibble with most of the `gapminder` columns. I create another with the remainder, but filtered down to just one country. I am able to `cbind()` these objects! Why? Because the 12 rows for Canada divide evenly into the 1704 rows of `gapminder`. Note that `dplyr::bind_cols()` refuses to column bind here.
+I create a tibble with most of the gapminder columns. I create another with the remainder, but filtered down to just one country. I am able to `cbind()` these objects! Why? Because the 12 rows for Canada divide evenly into the 1704 rows of gapminder. Note that `dplyr::bind_cols()` refuses to column bind here.
 
 ```{r}
 gapminder_mostly <- gapminder %>% select(-pop, -gdpPercap)
@@ -149,12 +149,12 @@ This data frame isn't obviously wrong, but it is wrong. See how the Canada's pop
 
 Bottom line: Row bind when you need to, but inspect the results re: coercion. Column bind only if you must and be extremely paranoid.
 
-## Joins in `dplyr`
+## Joins in dplyr
 
-Visit Chapter \@ref(join-cheatsheet) to see concrete examples of all the joins implemented in `dplyr`, based on comic characters and publishers.
+Visit Chapter \@ref(join-cheatsheet) to see concrete examples of all the joins implemented in dplyr, based on comic characters and publishers.
 
 
-The most recent release of `gapminder` includes a new data frame, `country_codes`, with country names and ISO codes. Therefore you can also use it to practice joins.
+The most recent release of gapminder includes a new data frame, `country_codes`, with country names and ISO codes. Therefore you can also use it to practice joins.
 
 ```{r end_multi_tibbles}
 gapminder %>% 

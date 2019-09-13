@@ -11,32 +11,32 @@
 
 Many people have written packages that enhance Shiny in some way or add extra functionality. Here is a list of several popular packages that people often use together with Shiny:
 
-* [`shinythemes`][shinythemes-web] - Easily alter the appearance of your app ([CRAN][shinythemes-cran]).
-* [`shinyjs`][shinyjs-web] - Enhance user experience in Shiny apps using JavaScript functions without knowing JavaScript ([CRAN][shinyjs-cran]; [GitHub][shinyjs-github]).
-* [`leaflet`][leaflet-web] - Add interactive maps to your apps ([CRAN][leaflet-cran]; [GitHub][leaflet-github]).
-* [`ggvis`][ggvis-web] - Similar to `ggplot2`, but the plots are focused on being web-based and are more interactive ([CRAN][ggvis-cran]).
-* [`shinydashboard`][shinydashboard-web] - Gives you tools to create visual “dashboards” ([CRAN][shinydashboard-cran]; [GitHub][shinydashboard-github]).
+* [shinythemes] - Easily alter the appearance of your app ([CRAN](https://CRAN.R-project.org/package=shinythemes)).
+* [shinyjs] - Enhance user experience in Shiny apps using JavaScript functions without knowing JavaScript ([CRAN](https://CRAN.R-project.org/package=shinyjs); [GitHub](https://github.com/daattali/shinyjs)).
+* [leaflet] - Add interactive maps to your apps ([CRAN](https://CRAN.R-project.org/package=leaflet); [GitHub](https://github.com/rstudio/leaflet)).
+* [ggvis] - Similar to ggplot2, but the plots are focused on being web-based and are more interactive ([CRAN](https://CRAN.R-project.org/package=ggvis)).
+* [shinydashboard] - Gives you tools to create visual “dashboards” ([CRAN](https://CRAN.R-project.org/package=shinydashboard); [GitHub]((https://github.com/rstudio/shinydashboard))).
 
 
 ## Resources {-}
 
 Shiny is a very popular package and has lots of resources on the web. Here's a compiled list of a few resources I recommend, which are all fairly easy to read and understand.
 
-- [Shiny official website][shiny-official-web]
-- [Shiny official tutorial][shiny-official-tutorial]
-- [Shiny cheatsheet][shiny-cheatsheet]
-- [Lots of short useful articles about different topics in Shiny - **highly recommended**][shiny-articles]
-- [Shiny in R Markdown](http://rmarkdown.rstudio.com/authoring_shiny.html)
-- Get help from the [Shiny Google group][shiny-google-groups] or [StackOverflow][shiny-stack-overflow]
-- [Publish your apps for free with shinyapps.io][shinyapps-web]
+- [Shiny official website][shiny]
+- Official [Learn Shiny tutorial]
+- RStudio's [Shiny cheatsheet]
+- [Lots of short useful articles about different topics in Shiny - **highly recommended**](https://shiny.rstudio.com/articles/)
+- [Shiny in R Markdown](https://rmarkdown.rstudio.com/authoring_shiny.html)
+- Get help from the [Shiny Google group](https://groups.google.com/forum/#!forum/shiny-discuss) or [StackOverflow](https://stackoverflow.com/questions/tagged/shiny)
+- Publish your apps for free with [shinyapps.io]
 - [Host your app on your own Shiny server][shiny-server-setup]
 - [Learn about how reactivity works][shiny-reactivity]
-- [Learn about useful debugging techniques][shiny-debugging]
+- [Learn about useful debugging techniques](https://shiny.rstudio.com/articles/debugging.html)
 
 
 # Slides {#shiny-slides}
 
-See ["Building Shiny Apps" slides](https://docs.google.com/presentation/d/1dXhqqsD7dPOOdcC5Y7RW--dEU7UfU52qlb0YD3kKeLw/edit#slide=id.p) by Dean Attali.
+See ["Building Shiny Apps" slides] by Dean Attali.
 
 
 # Building Shiny apps {#shiny-tutorial}
@@ -48,13 +48,13 @@ source("common.R")
 <!--Original content: https://stat545.com/shiny01_activity.html-->
 <!--Original Author: Dean Attali-->
 
-[Shiny][shiny-official-web] is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", Shiny is geared to R users who have zero experience with web development, and you do not need to know any HTML/CSS/JavaScript.
+[Shiny] is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", Shiny is geared to R users who have zero experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
 You can do quite a lot with Shiny: think of it as an easy way to make an interactive web page, and that web page can seamlessly interact with R and display R objects (plots, tables, of anything else you do in R). To get a sense of the wide range of things you can do with Shiny, you can visit my Shiny server (<https://daattali.com/shiny/>), which hosts some of my own Shiny apps.
 
 This tutorial is a hands-on activity complement to a set of [presentation slides](#shiny-slides) for learning how to build Shiny apps. In this activity, we'll walk through all the steps of building a Shiny app using a dataset that lets you explore the products available at the BC Liquor Store. The final version of the app, including a few extra features that are left as exercises for the reader, can be seen here: <https://daattali.com/shiny/bcl/>. Any activity deemed as an exercise throughout this tutorial is not mandatory for building our app, but they are good for getting more practice with Shiny. 
 
-This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial is the [official Shiny tutorial][shiny-official-tutorial]. RStudio also provides a [handy cheatsheet][shiny-cheatsheet] to remember all the little details after you already learned the basics.
+This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial is the official [Learn Shiny tutorial]. RStudio also provides a handy [Shiny cheatsheet] to remember all the little details after you already learned the basics.
 
 ## Before we begin {#shiny-tutorial-1}
 
@@ -81,7 +81,7 @@ Every Shiny app is composed of a two parts: a web page that shows the app to the
 
 UI is just a web document that the user gets to see, it's HTML that you write using Shiny's functions. The UI is responsible for creating the layout of the app and telling Shiny exactly where things go. The server is responsible for the logic of the app; it's the set of instructions that tell the web page what to show when the user interacts with the page.
 
-If you look at the app we will be building (<http://daattali.com/shiny/bcl/>), the page that you see is built with the UI code. You'll notice there are some controls that you, as the user, can manipulate. If you adjust the price or choose a country, you'll notice that the plot and the table get updated. The UI is responsible for creating these controls and telling Shiny *where* to place the controls and where to place the plot and table, while the server is responsible for creating the actual plot or the data in the table.
+If you look at the app we will be building (<https://daattali.com/shiny/bcl/>), the page that you see is built with the UI code. You'll notice there are some controls that you, as the user, can manipulate. If you adjust the price or choose a country, you'll notice that the plot and the table get updated. The UI is responsible for creating these controls and telling Shiny *where* to place the controls and where to place the plot and table, while the server is responsible for creating the actual plot or the data in the table.
 
 ## Create an empty Shiny app {#shiny-tutorial-3}
 
@@ -481,7 +481,7 @@ Since *coolplot* was defined as a `plotOutput`, we must use the `renderPlot` fun
 
 If you add the code above inside the server function, you should see a plot with 100 random points in the app.
 
-**Exercise:** The code inside `renderPlot()` doesn't have to be only one line, it can be as long as you'd like as long as it returns a plot. Try making a more complex plot using `ggplot2`. The plot doesn't have to use our dataset, it could be anything, just to make sure you can use `renderPlot()`.
+**Exercise:** The code inside `renderPlot()` doesn't have to be only one line, it can be as long as you'd like as long as it returns a plot. Try making a more complex plot using ggplot2. The plot doesn't have to use our dataset, it could be anything, just to make sure you can use `renderPlot()`.
 
 ### Making an output react to an input
 
@@ -509,7 +509,7 @@ Notice that these short three lines of code are using all the three rules for bu
 
 Now we have all the knowledge required to build a plot visualizing some aspect of the data. We'll create a simple histogram of the alcohol content of the products by using the same three rules to create a plot output.
 
-First we need to make sure `ggplot2` is loaded, so add a `library(ggplot2)` at the top.
+First we need to make sure ggplot2 is loaded, so add a `library(ggplot2)` at the top.
 
 Next we'll return a histogram of alcohol content from `renderPlot()`. Let's start with just a histogram of the whole data, unfiltered.
 
@@ -889,9 +889,9 @@ Remember how every single app is a web page powered by an R session on a compute
 
 ### Host on shinyapps.io
 
-RStudio provides a service called [shinyapps.io][shinyapps-web] which lets you host your apps for free. It is integrated seamlessly into RStudio so that you can publish your apps with the click of a button, and it has a free version.  The free version allows a certain number of apps per user and a certain number of activity on each app, but it should be good enough for most of you. It also lets you see some basic stats about usage of your app.
+RStudio provides a service called [shinyapps.io] which lets you host your apps for free. It is integrated seamlessly into RStudio so that you can publish your apps with the click of a button, and it has a free version.  The free version allows a certain number of apps per user and a certain number of activity on each app, but it should be good enough for most of you. It also lets you see some basic stats about usage of your app.
 
-Hosting your app on shinyapps.io is the easy and recommended way of getting your app online.  Go to [www.shinyapps.io][shinyapps-web] and sign up for an account. When you're ready to publish your app, click on the "Publish Application" button in RStudio and follow the instructions. You might be asked to install a couple packages if it's your first time.
+Hosting your app on [shinyapps.io] is the easy and recommended way of getting your app online.  Go to <https://www.shinyapps.io> and sign up for an account. When you're ready to publish your app, click on the "Publish Application" button in RStudio and follow the instructions. You might be asked to install a couple packages if it's your first time.
 
 ```{r echo = FALSE, out.width = "93%", fig.cap = "Shiny publish application button"}
 knitr::include_graphics("img/shiny-publish.png")
@@ -902,7 +902,7 @@ After a successful deployment to shinyapps.io, you will be redirected to your ap
 
 ### Host on a Shiny Server
 
-The other option for hosting your app is on your own private [Shiny Server][shiny-server]. Shiny Server is also a product by RStudio that lets you host apps on your own server. This means that instead of RStudio hosting the app for you, you have it on your own private server. This means you have a lot more freedom and flexibility, but it also means you need to have a server and be comfortable administering a server. I currently host all my apps on [my own Shiny Server](https://daattali.com/shiny/) just because I like having the extra control, but when I first learned about Shiny I used shinyapps.io for several months.
+The other option for hosting your app is on your own private [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/). Shiny Server is also a product by RStudio that lets you host apps on your own server. This means that instead of RStudio hosting the app for you, you have it on your own private server. This means you have a lot more freedom and flexibility, but it also means you need to have a server and be comfortable administering a server. I currently host all my apps on [my own Shiny Server](https://daattali.com/shiny/) just because I like having the extra control, but when I first learned about Shiny I used shinyapps.io for several months.
 
 If you're feeling adventurous and want to host your own server, you can follow [my tutorial for hosting a Shiny Server][shiny-server-setup].
 
@@ -913,7 +913,7 @@ Shiny is extremely powerful and has lots of features that we haven't covered. He
 
 ### Shiny in R Markdown
 
-You can include Shiny inputs and outputs in an R Markdown document! This means that your R Markdown document can be interactive. Learn more [here][shiny-bookdown]. Here's a simple example of how to include interactive Shiny elements in an R Markdown:
+You can include Shiny inputs and outputs in an R Markdown document! This means that your R Markdown document can be interactive. Learn more [here](https://bookdown.org/yihui/rmarkdown/shiny-documents.html). Here's a simple example of how to include interactive Shiny elements in an R Markdown:
 
 ````markdown
 `r xfun::file_string('supporting-docs/shiny.Rmd')`
@@ -1016,7 +1016,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-If you do want to add some JavaScript or use common JavaScript functions in your apps, you might want to check out [`shinyjs`][shinyjs-web].
+If you do want to add some JavaScript or use common JavaScript functions in your apps, you might want to check out [shinyjs].
 
 ## Ideas to improve our app {#shiny-tutorial-15}
 
@@ -1032,7 +1032,7 @@ The app we developed is functional, but there are plenty of improvements that ca
     - **Hint:** Place the image in a folder named `www`, and use `img(src = "imagename.png")` to add the image.
 
 1. Share your app with everyone on the internet by deploying to shinyapps.io.
-    - **Hint:** Go to [shinyapps.io][shinyapps-web], register for an account, then click the "Publish App" button in RStudio. 
+    - **Hint:** Go to [shinyapps.io], register for an account, then click the "Publish App" button in RStudio. 
 
 1. Use the `DT` package to turn the current results table into an interactive table.
     - **Hint:** Install the `DT` package, replace `tableOutput()` with `DT::dataTableOutput()` and replace `renderTable()` with `DT::renderDataTable()`.
@@ -1049,7 +1049,7 @@ The app we developed is functional, but there are plenty of improvements that ca
 1. If you know CSS, add CSS to make your app look nicer. 
     - **Hint:** Add a CSS file under `www` and use the function `includeCSS()` to use it in your app.
 
-1. Experiment with packages that add extra features to Shiny, such as `shinyjs`, `leaflet`, `shinydashboard`, `shinythemes`, `ggvis`.
+1. Experiment with packages that add extra features to Shiny, such as shinyjs, leaflet, shinydashboard, shinythemes, ggvis.
     - **Hint:** Each package is unique and has a different purpose, so you need to read the documentation of each package in order to know what it provides and how to use it.
     
 1. Show the number of results found whenever the filters change. For example, when searching for Italian wines $20-$40, the app would show the text "We found 122 options for you".
@@ -1071,30 +1071,12 @@ The app we developed is functional, but there are plenty of improvements that ca
     - **Hint:** There are two ways to approach this. You can either add a value of "All" to the dropdown list of country options, you can include a checkbox for "Filter by country" and only show the dropdown.
 
 
-[shiny-official-web]: https://shiny.rstudio.com
-[shiny-official-tutorial]: https://shiny.rstudio.com/tutorial/
-[shiny-cheatsheet]: https://shiny.rstudio.com/images/shiny-cheatsheet.pdf
-[shiny-articles]: https://shiny.rstudio.com/articles/
-[shiny-bookdown]: https://bookdown.org/yihui/rmarkdown/shiny-documents.html
-[shiny-google-groups]: https://groups.google.com/forum/#!forum/shiny-discuss
-[shiny-stack-overflow]: https://stackoverflow.com/questions/tagged/shiny
-[shinyapps-web]: https://www.shinyapps.io
+[Learn Shiny tutorial]: https://shiny.rstudio.com/tutorial/
+[Shiny cheatsheet]: https://shiny.rstudio.com/images/shiny-cheatsheet.pdf
+[shinyapps.io]: https://www.shinyapps.io
 [shiny-server-setup]: https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 [shiny-reactivity]: https://shiny.rstudio.com/articles/understanding-reactivity.html
-[shiny-debugging]: https://shiny.rstudio.com/articles/debugging.html
-[shiny-server]: https://www.rstudio.com/products/shiny/shiny-server/
-[shinydashboard-web]: https://rstudio.github.io/shinydashboard/
-[shinydashboard-cran]: https://CRAN.R-project.org/package=shinydashboard
-[shinydashboard-github]: https://github.com/rstudio/shinydashboard
-[leaflet-web]: https://rstudio.github.io/leaflet/
-[leaflet-cran]: https://CRAN.R-project.org/package=leaflet
-[leaflet-github]: https://github.com/rstudio/leaflet
-[ggvis-web]: https://ggvis.rstudio.com
-[ggvis-cran]: https://CRAN.R-project.org/package=ggvis
-[shinythemes-web]: https://rstudio.github.io/shinythemes/
-[shinythemes-cran]: https://CRAN.R-project.org/package=shinythemes
-[shinyjs-web]: https://deanattali.com/shinyjs/
-[shinyjs-cran]: https://CRAN.R-project.org/package=shinyjs
-[shinyjs-github]: https://github.com/daattali/shinyjs
+["Building Shiny Apps" slides]: https://docs.google.com/presentation/d/1dXhqqsD7dPOOdcC5Y7RW--dEU7UfU52qlb0YD3kKeLw/edit#slide=id.p
+
 ```{r links, child="links.md"}
 ```

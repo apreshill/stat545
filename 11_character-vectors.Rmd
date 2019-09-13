@@ -12,9 +12,9 @@ We've spent a lot of time working with big, beautiful data frames. That are clea
 
 But real life will be much nastier. You will bring data into R from the outside world and discover there are problems. You might think: how hard can it be to deal with character data? And the answer is: it can be very hard!
 
-* [Stack Exchange outage][stackexchange-outage]
-* [Regexes to validate/match email addresses][email-regex]
-* [Fixing an Atom bug][fix-atom-bug]
+* [Stack Exchange outage](https://stackstatus.net/post/147710624694/outage-postmortem-july-20-2016)
+* [Regexes to validate/match email addresses](https://emailregex.com)
+* [Fixing an Atom bug](https://davidvgalbraith.com/how-i-fixed-atom/)
 
 Here we discuss common remedial tasks for cleaning and transforming character data, also known as "strings". A data frame or tibble will consist of one or more *atomic vectors* of a certain class. This lesson deals with things you can do with vectors of class `character`.
 
@@ -24,33 +24,33 @@ I start with this because we cannot possibly do this topic justice in a short am
 
 ### Manipulating character vectors
 
-* [`stringr` package][stringr-web].
-  - A core package in the `tidyverse.` It is installed via `install.packages("tidyverse")` and also loaded via `library(tidyverse)`. Of course, you can also install or load it individually.
+* [stringr package](https://stringr.tidyverse.org).
+  - A core package in the tidyverse. It is installed via `install.packages("tidyverse")` and also loaded via `library(tidyverse)`. Of course, you can also install or load it individually.
   - Main functions start with `str_`. Auto-complete is your friend.
   - Replacements for base functions re: string manipulation and regular expressions (see below).
   - Main advantages over base functions: greater consistency about inputs and outputs. Outputs are more ready for your next analytical task. 
-* [`tidyr` package][tidyr-web].
+* [tidyr package][tidyr-web].
   - Especially useful for functions that split one character vector into many and *vice versa*: `separate()`, `unite()`, `extract()`.
 * Base functions: `nchar()`, `strsplit()`, `substr()`, `paste()`, `paste0()`.
-* The [`glue` package][glue-web] is fantastic for string interpolation. If `stringr::str_interp()` doesn't get your job done, check out `glue`.
+* The [glue] package is fantastic for string interpolation. If `stringr::str_interp()` doesn't get your job done, check out glue.
 
 ### Regular expressions resources
 
 A God-awful and powerful language for expressing patterns to match in text or for search-and-replace. Frequently described as "write only", because regular expressions are easier to write than to read/understand. And they are not particularly easy to write.
 
-* We again prefer the [`stringr` package][stringr-cran] over base functions. Why?
-  - Wraps [`stringi`][stringi-cran], which is a great place to look if `stringr` isn't powerful enough.
-  - Standardized on [ICU regular expressions][icu-regex], so you can stop toggling `perl = TRUE/FALSE` at random.
+* We again prefer the [stringr package](https://CRAN.R-project.org/package=stringr) over base functions. Why?
+  - Wraps [stringi](https://CRAN.R-project.org/package=stringi), which is a great place to look if stringr isn't powerful enough.
+  - Standardized on [ICU regular expressions](https://userguide.icu-project.org/strings/regexp), so you can stop toggling `perl = TRUE/FALSE` at random.
   - Results come back in a form that is much friendlier for downstream work.
 * The [Strings chapter][r4ds-strings] of [R for Data Science][r4ds] [@wickham2016] is a great resource.
-* Older STAT 545 lessons on regular expressions have some excellent content. This lesson draws on them, but makes more rigorous use of `stringr` and uses example data that is easier to support long-term.
+* Older STAT 545 lessons on regular expressions have some excellent content. This lesson draws on them, but makes more rigorous use of stringr and uses example data that is easier to support long-term.
   - [2014 Intro to regular expressions](#oldies) by TA Gloria Li (Appendix \@ref(oldies)).
   - [2015 Regular expressions and character data in R](#oldies) by TA Kieran Samuk (Appendix \@ref(oldies)).
-* RStudio Cheat Sheet on [Regular Expressions in R][rstudio-regex-cheatsheet].
+* RStudio Cheat Sheet on [Regular Expressions in R](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf).
 * Regex testers:
-  - [regex101.com][regex101]
-  - [regexr.com][regexr]
-* [`rex` R package][rex-github]: make regular expression from human readable expressions.
+  - [regex101.com](https://regex101.com)
+  - [regexr.com](https://regexr.com)
+* [rex R package](https://github.com/kevinushey/rex): make regular expression from human readable expressions.
 * Base functions: `grep()` and friends.
 
 ### Character encoding resources
@@ -63,16 +63,16 @@ A God-awful and powerful language for expressing patterns to match in text or fo
 
 ### Character vectors that live in a data frame
 
-* Certain operations are facilitated by `tidyr`. These are described below.
+* Certain operations are facilitated by tidyr. These are described below.
 * For a general discussion of how to work on variables that live in a data frame, see [Vectors versus tibbles](#oldies) (Appendix \@ref(oldies)).
 
-## Load the `tidyverse`, which includes `stringr`
+## Load the tidyverse, which includes stringr
 
 ```{r start_char_vectors}
 library(tidyverse)
 ```
 
-## Regex-free string manipulation with `stringr` and `tidyr`
+## Regex-free string manipulation with stringr and tidyr
 
 Basic string manipulation tasks:
 
@@ -87,7 +87,7 @@ Basic string manipulation tasks:
 * Operate on two or more character vectors
   - Glue them together element-wise to get a new character vector.
 
-*`fruit`, `words`, and `sentences` are character vectors that ship with `stringr` for practicing.*
+*`fruit`, `words`, and `sentences` are character vectors that ship with stringr for practicing.*
 
 ### Detect or filter on a target string
 
@@ -222,15 +222,15 @@ tibble(melons) %>%
 
 And that concludes our treatment of regex-free manipulations of character data!
 
-## Regular expressions with `stringr`
+## Regular expressions with stringr
 
 ```{r echo = FALSE, fig.cap = "From [\\@ThePracticalDev](https://twitter.com/ThePracticalDev/status/774309983467016193)", out.width = "50%"}
 knitr::include_graphics("img/regexbytrialanderror-big-smaller.png")
 ```
 
-### Load `gapminder`
+### Load gapminder
 
-The country names in the `gapminder` dataset are convenient for examples. Load it now and store the `r nlevels(gapminder::gapminder$country)` unique country names to the object `countries`.
+The country names in the gapminder dataset are convenient for examples. Load it now and store the `r nlevels(gapminder::gapminder$country)` unique country names to the object `countries`.
 
 ```{r}
 library(gapminder)
@@ -364,7 +364,7 @@ Here is routine, non-regex use of backslash `\` escapes in plain vanilla R strin
 
 Examples of using escapes in regexes to match characters that would otherwise have a special interpretation.
 
-We know several `gapminder` country names contain a period. How do we isolate them? Although it's tempting, this command `str_subset(countries, pattern = ".")` won't work!
+We know several gapminder country names contain a period. How do we isolate them? Although it's tempting, this command `str_subset(countries, pattern = ".")` won't work!
 
 ```{r}
 ## cheating using a POSIX class ;)
@@ -393,19 +393,7 @@ For now, this lesson will refer you to other place to read up on this:
 * STAT 545 [2014 Intro to regular expressions](#oldies) by TA Gloria Li (Appendix \@ref(oldies)).
 * The [Strings chapter][r4ds-strings] of [R for Data Science][r4ds] [@wickham2016].
 
-
-[rstudio-regex-cheatsheet]: https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf
-[stackexchange-outage]: https://stackstatus.net/post/147710624694/outage-postmortem-july-20-2016
-[email-regex]: https://emailregex.com
-[fix-atom-bug]: https://davidvgalbraith.com/how-i-fixed-atom/
-[icu-regex]: https://userguide.icu-project.org/strings/regexp
-[regex101]: https://regex101.com
-[regexr]: https://regexr.com
 [r4ds-strings]: https://r4ds.had.co.nz/strings.html
-[rex-github]: https://github.com/kevinushey/rex
-[stringi-cran]: https://CRAN.R-project.org/package=stringi
-[glue-web]: https://glue.tidyverse.org
-[stringr-cran]: https://CRAN.R-project.org/package=stringr
-[stringr-web]: https://stringr.tidyverse.org
+
 ```{r links, child="links.md"}
 ```

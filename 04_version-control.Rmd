@@ -6,7 +6,7 @@
 source("common.R")
 ```
 
-Content now [here][happy-git]. Install Git, install a Git client or GUI, establish pull/push connection from computer to GitHub in the shell, establish GitHub connection via RStudio, credential caching, troubleshooting.
+Content now at [Happy Git and GitHub for the useR]. Install Git, install a Git client or GUI, establish pull/push connection from computer to GitHub in the shell, establish GitHub connection via RStudio, credential caching, troubleshooting.
 
 ## Claim your private STAT 545 repository {#claim-stat545-repo}
 
@@ -25,7 +25,7 @@ We assume the following:
 * You've proven that you can push to / pull from GitHub from RStudio.
 * You are no longer being challenged for your GitHub username and password because your credentials have been cached or you've set up SSH keys.
   
-Instructions for all of this are [here][happy-git].
+Instructions for all of this are at [Happy Git and GitHub for the useR].
 
 ### Outline
 

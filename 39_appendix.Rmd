@@ -287,7 +287,7 @@ The final version of the function factory is about a dozen lines of fairly pedes
 
 ## How to obtain a bunch of GitHub issues or pull requests with R {#gh-package}
 
-[Using `dplyr` + `purrr` + `tidyr`](https://github.com/jennybc/analyze-github-stuff-with-r) to analyze data about GitHub repos via the [`gh` package][gh-github]
+[Using dplyr + purrr + tidyr](https://github.com/jennybc/analyze-github-stuff-with-r) to analyze data about GitHub repos via the [`gh` package][gh-github]
 
 ## How to tame XML with nested data frames and `purrr` {#tame-google-sheets}
 
@@ -507,7 +507,7 @@ Learner-facing dependencies:
 
 Instructor dependencies:
 
-* `curl` if you execute the code to grab the Lord of the Rings data used in examples from GitHub. Note that the files are also included in the `datacarpentry/data/tidy-data` directory, so data download is avoidable.
+* [curl] if you execute the code to grab the Lord of the Rings data used in examples from GitHub. Note that the files are also included in the `datacarpentry/data/tidy-data` directory, so data download is avoidable.
 * `rmarkdown`, `knitr`, and `xtable` if you want to compile the `Rmd` to `md` and `html`.
 
 

@@ -2,11 +2,55 @@
 This file contains links that appear in 2+ .Rmds
 -->
 
+<!--Packages (these are the main links we use for a package)-->
+[tidyverse]: https://tidyverse.tidyverse.org
+[glue]: https://glue.tidyverse.org/
+# [dplyr]:
+# [ggplot2]:
+# [stringr]:
+# [lubridate]:
+# [tidyr]:
+# [purrr]:
+# [plyr]: 
+# [fs]:
+# [testthat]:
+# [stringi]:
+
+
+[pkgdown]: https://pkgdown.r-lib.org
+[usethis]: https://usethis.r-lib.org
+[roxygen2]: https://CRAN.R-project.org/package=roxygen2
+[googlesheets]: https://github.com/jennybc/googlesheets
+[rebird]: https://docs.ropensci.org/rebird/
+[geonames]: https://docs.ropensci.org/geonames/
+[rplos]: https://docs.ropensci.org/rplos/
+[gender]: https://docs.ropensci.org/gender/
+[genderdata]: https://docs.ropensci.org/genderdata/
+[curl]: https://CRAN.R-project.org/package=curl
+[jsonlite]: https://cran.r-project.org/package=jsonlite
+[xml2]: https://xml2.r-lib.org
+[httr]: https://httr.r-lib.org
+[rvest]: https://rvest.tidyverse.org
+
+[shinythemes]: https://rstudio.github.io/shinythemes
+[shinyjs]: https://deanattali.com/shinyjs
+[leaflet]: https://rstudio.github.io/leaflet
+[ggvis]: https://ggvis.rstudio.com
+[shinydashboard]: https://rstudio.github.io/shinydashboard/
+[shiny]: https://shiny.rstudio.com
+
+
+<!--Online Resources-->
+[R Packages]: https://r-pkgs.org/index.html
+[Happy Git and GitHub for the useR]: https://happygitwithr.com
+
+
+
 [stat-545]: https://stat545.com
 [rstudio-dplyr-cheatsheet-download]: https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
-[happy-git]: https://happygitwithr.com
-[tidyverse-main-page]: https://www.tidyverse.org
-[tidyverse-web]: https://tidyverse.tidyverse.org
+
+
+
 [dplyr-cran]: https://CRAN.R-project.org/package=dplyr
 [dplyr-github]: https://github.com/hadley/dplyr
 [dplyr-vignette-intro]: https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html
@@ -20,11 +64,13 @@ This file contains links that appear in 2+ .Rmds
 [devtools-web]: https://devtools.r-lib.org
 [devtools-cheatsheet]: https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf
 [fs-web]: https://fs.r-lib.org/index.html
-[usethis-web]: https://usethis.r-lib.org
 [forcats-web]: https://forcats.tidyverse.org
 [adv-r]: http://adv-r.had.co.nz
 [adv-r-fxn-args]: http://adv-r.had.co.nz/Functions.html#function-arguments
-[r-pkgs2]: https://r-pkgs.org/index.html
+
+[r-pkgs2-tests]: https://r-pkgs.org/tests.html
+
+
 [r4ds]: https://r4ds.had.co.nz
 [r4ds-readr-strings]: https://r4ds.had.co.nz/data-import.html#readr-strings
 [r4ds-transform]: https://r4ds.had.co.nz/transform.html

@@ -20,15 +20,15 @@ Here we discuss common remedial tasks for dealing with date-times.
 
 I start with this because we cannot possibly do this topic justice in a short amount of time. Our goal is to make you aware of specific problems and solutions. Once you have a character problem in real life, these resources will be extremely helpful as you delve deeper.
 
-[Dates and times][r4ds-dates-times] chapter from [R for Data Science][r4ds] by Hadley Wickham and Garrett Grolemund [-@wickham2016]. See also the subsection on dates and times in the [Data import chapter][r4ds-data-import].
+[Dates and times](https://r4ds.had.co.nz/dates-and-times.html) chapter from [R for Data Science][r4ds] by Hadley Wickham and Garrett Grolemund [-@wickham2016]. See also the subsection on dates and times in the [Data import chapter][r4ds-data-import].
 
-The [`lubridate`][lubridate-web] package ([CRAN][lubridate-cran]; [GitHub][lubridate-github]; [main vignette][lubridate-vignette]).
+The [lubridate](https://lubridate.tidyverse.org) package ([CRAN](https://CRAN.R-project.org/package=lubridate); [GitHub](https://github.com/tidyverse/lubridate); [main vignette](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html)).
 
-Grolemund and Wickham's paper on `lubridate` in the Journal of Statistical Software [-@grolemund2011].
+Grolemund and Wickham's paper on lubridate in the Journal of Statistical Software [-@grolemund2011].
 
-Exercises to push you to learn `lubridate`: [part 1][lubridate-ex1], [part 2][lubridate-ex2], and [part 3][lubridate-ex3] *posts include links to answers!*
+Exercises to push you to learn lubridate: [part 1](https://www.r-exercises.com/2016/08/15/dates-and-times-simple-and-easy-with-lubridate-part-1/), [part 2](https://www.r-exercises.com/2016/08/29/dates-and-times-simple-and-easy-with-lubridate-exercises-part-2/), and [part 3](https://www.r-exercises.com/2016/10/04/dates-and-times-simple-and-easy-with-lubridate-exercises-part-3/) *posts include links to answers!*
 
-## Load the `tidyverse` and `lubridate`
+## Load the tidyverse and lubridate
 
 ```{r start_dates, message = FALSE, warning = FALSE}
 library(tidyverse)
@@ -38,7 +38,7 @@ library(lubridate)
 
 ## Get your hands on some dates or date-times
 
-Use base `Sys.Date()` or `lubridate`'s `today()` to get today's date, without any time.
+Use base `Sys.Date()` or lubridate's `today()` to get today's date, without any time.
 
 ```{r}
 Sys.Date()
@@ -54,7 +54,7 @@ str(today())
 class(today())
 ```
 
-Use base `Sys.time()` or `lubridate`'s `now()` to get RIGHT NOW, meaning the date and the time.
+Use base `Sys.time()` or lubridate's `now()` to get RIGHT NOW, meaning the date and the time.
 
 ```{r}
 Sys.time()
@@ -100,14 +100,6 @@ Eventually you will need to print this stuff in, say, a report.
 
 *I always use `format()` but assumed lubridate had something else/better. Am I missing something here? Probably. For now, read the help: `?format.POSIXct`.*
 
-[lubridate-ex1]: https://www.r-exercises.com/2016/08/15/dates-and-times-simple-and-easy-with-lubridate-part-1/
-[lubridate-ex2]: https://www.r-exercises.com/2016/08/29/dates-and-times-simple-and-easy-with-lubridate-exercises-part-2/
-[lubridate-ex3]: https://www.r-exercises.com/2016/10/04/dates-and-times-simple-and-easy-with-lubridate-exercises-part-3/
-[r4ds-data-import]: http://r4ds.had.co.nz/data-import.html
-[r4ds-dates-times]: https://r4ds.had.co.nz/dates-and-times.html
-[lubridate-web]: https://lubridate.tidyverse.org
-[lubridate-cran]: https://CRAN.R-project.org/package=lubridate
-[lubridate-github]: https://github.com/tidyverse/lubridate
-[lubridate-vignette]: https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html
+
 ```{r links, child="links.md"}
 ```
